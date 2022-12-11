@@ -1,24 +1,21 @@
+
+#source: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
+
 name: GH Docker-On-Demand
 description: Description of Docker-On-Demand from GH Actions
 
-on:
-  # Allows you to run this workflow manually from the Actions tab
-  repository_dispatch:
-    types: [on-demand-docker-test]
+on: [push]
 
-inputs:
-  gh-actions-input:
-    description: "input parms"
-    required: true
-    default: WHATEVER
-
-outputs:
-  time:
-    description: "output parms"
-
-runs:
-  using: "docker"
-  image: "Dockerfile"
-
-  args:
-    - ${{ inputs.gh-actions-input }}
+jobs:
+  GH-Actions-Docker-On-Demand:
+    runs-on: ubuntu-latest
+    name: Description of Docker-On-Demand from GH Actions
+    steps:
+      - name: GH action step
+        id: hello
+        uses: actions/GH-Actions-Docker-On-Demand
+        with:
+          who-to-greet: 'WHATEVER the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"

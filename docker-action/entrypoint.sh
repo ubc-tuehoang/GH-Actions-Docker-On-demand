@@ -12,3 +12,4 @@ time=$(date)
 echo "::set-output name=time::$time"
 
 echo '::set-env name=ENV-VAR1::env-var1-WHATEVER'
+echo "time=$time" >> $GITHUB_OUTPUT
