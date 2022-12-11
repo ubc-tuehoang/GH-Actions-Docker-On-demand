@@ -7,15 +7,19 @@ description: Description of Docker-On-Demand from GH Actions
 on: [push]
 
 jobs:
-  GH-Actions-Docker-On-Demand:
+  hello_world_job:
     runs-on: ubuntu-latest
-    name: Description of Docker-On-Demand from GH Actions
+    name: A job to say hello
     steps:
-      - name: GH action step
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
         id: hello
-        uses: actions/docker-action
         with:
-          who-to-greet: 'WHATEVER the Octocat'
+          who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
