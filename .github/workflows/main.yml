@@ -1,6 +1,19 @@
 name: GH Docker-On-Demand
 description: Description of Docker-On-Demand from GH Actions
 
+inputs:
+  gh-actions-input:
+    description: "input parms"
+    required: true
+    default: WHATEVER
+
+outputs:
+  time:
+    description: "output parms"
+
 runs:
   using: "docker"
   image: "Dockerfile"
+
+  args:
+    - ${{ inputs.gh-actions-input }}
