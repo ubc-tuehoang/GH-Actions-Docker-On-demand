@@ -1,6 +1,11 @@
 name: GH Docker-On-Demand
 description: Description of Docker-On-Demand from GH Actions
 
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  repository_dispatch:
+    types: [on-demand-docker-test]
+
 inputs:
   gh-actions-input:
     description: "input parms"
