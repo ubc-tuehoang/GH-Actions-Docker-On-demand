@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: GH action step
         id: hello
-        uses: actions/GH-Actions-Docker-On-Demand
+        uses: actions/docker-action
         with:
           who-to-greet: 'WHATEVER the Octocat'
       # Use the output from the `hello` step
