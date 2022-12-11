@@ -2,7 +2,6 @@
 #source: https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action
 
 name: GH Docker-On-Demand
-description: Description of Docker-On-Demand from GH Actions
 
 on: [push]
 
