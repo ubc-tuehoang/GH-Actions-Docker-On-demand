@@ -1,0 +1,6 @@
+name: GH Docker-On-Demand
+description: Description of Docker-On-Demand from GH Actions
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
